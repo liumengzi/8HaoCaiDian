@@ -105,9 +105,10 @@ public class LoginActivity extends RBBaseActivity implements View.OnClickListene
                 if (data != null) {
                     if (data.code == 1) {
                         startActivity(new Intent(mContext, MainActivity.class));
+                        finish();
                     } else if (0 == data.code) {
                         ToastUtil.showToast(data.msg);
-                        startActivity(new Intent(mContext, MainActivity.class));
+                        //startActivity(new Intent(mContext, MainActivity.class));
                     }
                 }
             }

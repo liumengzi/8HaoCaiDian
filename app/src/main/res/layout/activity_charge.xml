@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5e5e5"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/C_main"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/C_main"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:src="@drawable/zuojiantou"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="充值"
+            android:textColor="@color/C_white"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+       android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+            />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#e5e5e5"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="元"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/C_red"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/charge_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+
+            android:paddingTop="5dp"
+            android:text="10元"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/charge_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+
+            android:paddingTop="5dp"
+            android:text="50元"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/charge_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+
+            android:paddingTop="5dp"
+            android:text="100元"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/charge_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+
+            android:paddingTop="5dp"
+            android:text="500元"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/C_white"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_alipay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/alipay"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_alipay"
+            android:text="支付宝支付(维护)"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_alipay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_alipay"
+            android:text="支付宝支付(维护)"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_alipay"
+            android:layout_toRightOf="@+id/iv_alipay"
+            android:text="大额充值首选，单笔限额1万元/笔；金额务必加小数点，避免限额"
+            android:textColor="#999"
+            android:textSize="12sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/C_white"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/alipay"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_wx"
+            android:text="微信支付(维护)"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_wx"
+            android:layout_toRightOf="@+id/iv_wx"
+            android:text="充值限额10-50元"
+            android:textColor="#999"
+            android:textSize="12sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/C_white"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_wx_kefu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/alipay"
+            />
+
+        <TextView
+            android:id="@+id/tv_wx_kefu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_wx_kefu"
+            android:text="微信支付(加客服好友)"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_wx_kefu"
+            android:layout_toRightOf="@+id/iv_wx_kefu"
+            android:text="大额充值首选，单笔限额1万元/笔；金额务必加小数点，避免限额"
+            android:textColor="#999"
+            android:textSize="12sp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="温馨提示:"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="为配合银行严厉打击套现、洗钱等违法行为，充值金额用于购彩，不可提现！请各位用户合理规划资金，根据实际消费需求充值"
+        android:textColor="#666"
+        android:textSize="12sp"
+        />
+</LinearLayout>

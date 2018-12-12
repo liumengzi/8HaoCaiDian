@@ -9,10 +9,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.tuding.client.eightnumcolour.R;
+import com.tuding.client.eightnumcolour.activity.ChargeActivity;
+import com.tuding.client.eightnumcolour.activity.ConnactServiceActivity;
 import com.tuding.client.eightnumcolour.activity.LotteryResultsActivity;
 import com.tuding.client.eightnumcolour.activity.SetActivity;
 import com.tuding.client.eightnumcolour.adapter.HomeAdapter;
@@ -37,6 +40,12 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
     ImageView kaijiangIv;
     @Bind(R.id.kaijiang_title_tv)
     TextView kaijiangTitleTv;
+    @Bind(R.id.rl_kefu)
+    RelativeLayout rlKefu;
+    @Bind(R.id.tv_charge)
+    TextView tvCharge;
+    @Bind(R.id.tv_cashout)
+    TextView tvCashout;
 
     public static MineFragment newInstance() {
         homeFragment = new MineFragment();
@@ -63,7 +72,7 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
                 parent.removeView(rootView);
             }
         }
-
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -80,11 +89,22 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
                 startActivity(new Intent(getActivity(), SetActivity.class));
             }
         });
+        rlKefu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ConnactServiceActivity.class));
+            }
+        });
+        tvCharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ChargeActivity.class));
+            }
+        });
     }
 
     @Override
     public void initValue() {
-
     }
 
     @Override

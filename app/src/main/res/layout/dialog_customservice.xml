@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@drawable/call_bg_shape"
+    android:padding="30dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="为配合银行严厉打击套现，"
+        android:textColor="@color/colorBlack"
+        android:textSize="13sp"
+        android:layout_gravity="center"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e5e5e5"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:id="@+id/bt_sure"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/next_step_shape"
+        android:text="确定"
+        android:textColor="@color/C_white"
+        android:textSize="13sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        />
+</LinearLayout>

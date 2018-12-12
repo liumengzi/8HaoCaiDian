@@ -3,6 +3,7 @@ package com.tuding.client.eightnumcolour.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +16,9 @@ import com.tuding.client.eightnumcolour.R;
 import com.tuding.client.eightnumcolour.utls.ToastUtil;
 import com.tuding.client.eightnumcolour.utls.URls;
 import com.tuding.client.eightnumcolour.utls.Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,7 +38,12 @@ public class RegisterActivity extends RBBaseActivity {
     TextView tvNext;
     @Bind(R.id.iv_back)
     ImageView ivBack;
+    @Bind(R.id.et_yaoqingma)
+    EditText etYaoqingma;
     private String phone;
+    private String tel;
+    private String smsCode;
+    private String yaoqingma;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,16 +68,57 @@ public class RegisterActivity extends RBBaseActivity {
                 startTimer();
             }
         });
-        tvNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, SetNickNameAndPsActivity.class));
-            }
-        });
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                yaoqingma = etYaoqingma.getText().toString().trim();
+                tel = etPhone.getText().toString().trim();
+                smsCode = etSms.getText().toString().trim();
+                if (!Util.isMobile(tel)) {
+                    ToastUtil.showToast("请输入正确的手机号码");
+                    return;
+                }
+                if (TextUtils.isEmpty(smsCode)) {
+                    ToastUtil.showToast("请输入验证码");
+                    return;
+                }
+                loadingDialog.show();
+                register(yaoqingma, tel, smsCode);
+            }
+        });
+    }
+
+    private void register(String yaoqingma, String tel, String smsCode) {
+        OkGo.post(URls.REGISTER).params("code", yaoqingma).params("mobile", tel).params
+                ("sms_code", smsCode).execute(new StringCallback() {
+            @Override
+            public void onSuccess(String s, Call call, Response response) {
+                loadingDialog.dismiss();
+                try {
+                    JSONObject jsonObject = new JSONObject(s);
+                    int code = jsonObject.getInt("code");
+                    String msg = jsonObject.getString("msg");
+                    if (code == 1) {
+                        ToastUtil.showToast(msg);
+                        startActivity(new Intent(RegisterActivity.this, SetNickNameAndPsActivity
+                                .class));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(Call call, Response response, Exception e) {
+                super.onError(call, response, e);
+                loadingDialog.dismiss();
             }
         });
     }
@@ -82,6 +132,18 @@ public class RegisterActivity extends RBBaseActivity {
             @Override
             public void onSuccess(String s, Call call, Response response) {
                 Log.d("messagemessage", s);
+                int code = 0;
+                try {
+                    JSONObject jsonObject = new JSONObject(s);
+                    String msg = jsonObject.getString("msg");
+                    code = jsonObject.getInt("code");
+                    if (code == 0) {
+                        ToastUtil.showToast(msg);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
 
             @Override
