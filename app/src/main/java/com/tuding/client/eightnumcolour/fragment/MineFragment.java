@@ -9,19 +9,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.tuding.client.eightnumcolour.R;
-import com.tuding.client.eightnumcolour.activity.AccountDetailActivity;
-import com.tuding.client.eightnumcolour.activity.CashOutActivity;
-import com.tuding.client.eightnumcolour.activity.CertificationActivity;
-import com.tuding.client.eightnumcolour.activity.ChargeActivity;
-import com.tuding.client.eightnumcolour.activity.ConnactServiceActivity;
-import com.tuding.client.eightnumcolour.activity.DrawMoneyManagerActivity;
 import com.tuding.client.eightnumcolour.activity.LotteryResultsActivity;
-import com.tuding.client.eightnumcolour.activity.PsManagerActivity;
 import com.tuding.client.eightnumcolour.activity.SetActivity;
 import com.tuding.client.eightnumcolour.adapter.HomeAdapter;
 import com.tuding.client.eightnumcolour.view.MyGridView;
@@ -45,12 +37,6 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
     ImageView kaijiangIv;
     @Bind(R.id.kaijiang_title_tv)
     TextView kaijiangTitleTv;
-    @Bind(R.id.rl_kefu)
-    RelativeLayout rlKefu;
-    @Bind(R.id.tv_charge)
-    TextView tvCharge;
-    @Bind(R.id.tv_cashout)
-    TextView tvCashout;
 
     public static MineFragment newInstance() {
         homeFragment = new MineFragment();
@@ -77,7 +63,7 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
                 parent.removeView(rootView);
             }
         }
-        ButterKnife.bind(this, rootView);
+
         return rootView;
     }
 
@@ -94,28 +80,11 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
                 startActivity(new Intent(getActivity(), SetActivity.class));
             }
         });
-        rlKefu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ConnactServiceActivity.class));
-            }
-        });
-        tvCharge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ChargeActivity.class));
-            }
-        });
-        tvCashout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), CashOutActivity.class));
-            }
-        });
     }
 
     @Override
     public void initValue() {
+
     }
 
     @Override
@@ -129,21 +98,6 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
         switch (position) {
             case 0:
                 startActivity(new Intent(getContext(), LotteryResultsActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(getContext(), AccountDetailActivity.class));
-                break;
-            case 2:
-                startActivity(new Intent(getContext(), CertificationActivity.class));
-                break;
-            case 3:
-                startActivity(new Intent(getContext(), DrawMoneyManagerActivity.class));
-                break;
-            case 4:
-                startActivity(new Intent(getContext(), PsManagerActivity.class));
-                break;
-            case 5:
-                startActivity(new Intent(getContext(), CertificationActivity.class));
                 break;
         }
     }

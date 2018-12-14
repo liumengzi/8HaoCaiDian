@@ -36,13 +36,13 @@
         android:padding="10dp"
         >
 
-        <ImageView
+        <android.support.v4.widget.CircleImageView
             android:id="@+id/iv_bank"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerVertical="true"
             android:scaleType="centerCrop"
-            android:src="@mipmap/unipay"
+            android:src="@drawable/ic_launcher_background"
             />
 
         <LinearLayout
@@ -59,9 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="银行卡提现"
+                android:text="中国建设银行"
                 android:textColor="#333"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 />
 
             <TextView
@@ -69,9 +69,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_bank"
                 android:layout_marginTop="10dp"
-                android:text="尾号储蓄卡"
+                android:text="尾号9913储蓄卡"
                 android:textColor="#666"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 />
         </LinearLayout>
 
@@ -136,19 +136,12 @@
             android:textSize="15sp"
             />
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="最低提现金额为10元"
-        android:textColor="#B1B1B1"
-        android:textSize="13sp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="提现申请24小时内到账，渠道方将收取1%的服务费"
+        android:text="提现申请24小时内到账"
         android:textColor="#B1B1B1"
         android:textSize="13sp"
         />

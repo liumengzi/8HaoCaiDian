@@ -42,6 +42,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/content_tv"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="#fef8ec"
@@ -61,7 +62,7 @@
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
-                    android:text="请至少选择6个前区号码" />
+                    android:text="请至少选择5个前区号码" />
 
                 <TextView
                     android:id="@+id/random_tv"
@@ -78,9 +79,10 @@
 
                 <Spinner
                     android:id="@+id/random_sp"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
+
                     android:layout_marginTop="15dp"
                     android:layout_toLeftOf="@+id/random_tv"
                     android:entries="@array/randomSp"
@@ -125,7 +127,7 @@
 
                 <Spinner
                     android:id="@+id/bulerandom_sp"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="15dp"

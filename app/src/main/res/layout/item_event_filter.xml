@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioButton
+        android:id="@+id/name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/eventfilter_bg_selector"
+        android:gravity="center"
+        android:text="世俱杯"
+        android:textColor="@drawable/text_bg_selector"
+        android:button="@null"
+        android:textSize="14sp" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90000000"
+    android:id="@+id/ll"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/C_white"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_manhole_state_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_bg_selector"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="胜平负(让球)" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_bg_selector"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="比分" />
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@drawable/text_bg_selector"
+                android:layout_weight="1"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="总进球" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_manhole_state_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@drawable/text_bg_selector"
+                android:layout_weight="1"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="半全场" />
+
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_bg_selector"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="混合过关" />
+
+            <RadioButton
+                android:id="@+id/rb_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_bg_selector"
+                android:background="@drawable/rad_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="单关" />
+        </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>

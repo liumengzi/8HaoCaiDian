@@ -1,5 +1,6 @@
 package com.tuding.client.eightnumcolour.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,9 +13,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -22,23 +29,34 @@ import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.tuding.client.eightnumcolour.R;
+import com.tuding.client.eightnumcolour.activity.BasketballActivity;
 import com.tuding.client.eightnumcolour.activity.BetActivity;
+import com.tuding.client.eightnumcolour.activity.LotteryResultsActivity;
 import com.tuding.client.eightnumcolour.adapter.HomeAdapter;
 import com.tuding.client.eightnumcolour.bean.HomeBean;
 import com.tuding.client.eightnumcolour.utls.URls;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import okhttp3.Call;
 import okhttp3.Response;
 
 public class HomeFragment extends RBBaseFragment implements ViewPager.OnPageChangeListener, View
-        .OnTouchListener, View.OnClickListener {
+        .OnTouchListener, View.OnClickListener, AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     private static HomeFragment homeFragment;
     private View rootView;
     private WelcomePagerAdapter adapter;
     private List<HomeBean.DataBean> data;
+    private int type;
+    private int count;
+    private String title;
+    private int postion;
+    private LinearLayout num_ll;
 
     public static HomeFragment newInstance() {
         homeFragment = new HomeFragment();
@@ -101,8 +119,57 @@ public class HomeFragment extends RBBaseFragment implements ViewPager.OnPageChan
         HomeAdapter homeAdapter = new HomeAdapter(getActivity());
         homeAdapter.setData(name, img, content);
         home_gv.setAdapter(homeAdapter);
+        home_gv.setOnItemClickListener(this);
         TextView bet_tv = rootView.findViewById(R.id.bet_tv);
         bet_tv.setOnClickListener(this);
+        RelativeLayout lottery_results_rl = rootView.findViewById(R.id.lottery_results_rl);
+        lottery_results_rl.setOnClickListener(this);
+        RelativeLayout daletou_rl = rootView.findViewById(R.id.daletou_rl);
+        daletou_rl.setOnClickListener(this);
+        final ImageView over_iv = rootView.findViewById(R.id.over_iv);
+
+
+        over_iv.setOnClickListener(new View.OnClickListener() {
+            private int randomNum;
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(final View v) {
+                Animation operatingAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.tip);
+                LinearInterpolator lin = new LinearInterpolator();
+                operatingAnim.setInterpolator(lin);
+                v.startAnimation(operatingAnim);
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        //execute the task
+                        ArrayList<Integer> integers = new ArrayList<>();
+                        Random random = new Random();
+                        while (integers.size() < 7) {
+                            if (integers.size() < 5) {
+                                randomNum = random.nextInt(35) + 1;
+                            } else {
+                                randomNum = random.nextInt(12) + 1;
+                            }
+                            if (!integers.contains(randomNum)) {
+
+                                integers.add(randomNum);
+                                Log.d(TAG, "onClick: " + randomNum);
+                            }
+
+                        }
+                        int childCount = num_ll.getChildCount();
+                        for (int i = 0; i < childCount; i++) {
+                            TextView childAt = (TextView) num_ll.getChildAt(i);
+                            childAt.setText(integers.get(i) + "");
+
+                        }
+                        v.clearAnimation();
+                    }
+                }, 2000);
+
+            }
+        });
+        num_ll = rootView.findViewById(R.id.num_ll);
 
     }
 
@@ -157,7 +224,67 @@ public class HomeFragment extends RBBaseFragment implements ViewPager.OnPageChan
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(mContext, BetActivity.class));
+        switch (view.getId()) {
+            case R.id.bet_tv:
+                startActivity(new Intent(mContext, BetActivity.class).putExtra("isSpint", true));
+                break;
+            case R.id.lottery_results_rl:
+                startActivity(new Intent(mContext, LotteryResultsActivity.class));
+                break;
+            case R.id.daletou_rl:
+                startActivity(new Intent(mContext, BetActivity.class));
+                break;
+        }
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        postion = position;
+        switch (position) {
+            case 0:
+                type = 0;
+                count = 5;
+
+                title = "混合过关";
+                break;
+            case 1:
+                type = 0;
+                count = 6;
+                title = "单关";
+                break;
+            case 2:
+                type = 4;
+                count = 1;
+                title = "胜平负(让球)";
+                break;
+            case 3:
+                type = 4;
+                count = 0;
+                title = "六场半全";
+                break;
+            case 4:
+                type = 7;
+                count = 0;
+                title = "任选九";
+                break;
+            case 5:
+                type = 2;
+                count = 3;
+                title = "总进球";
+                break;
+            case 6:
+                type = 5;
+                count = 5;
+                title = "混合过关";
+                break;
+            case 7:
+                type = 6;
+                count = 6;
+                title = "单关";
+                break;
+        }
+        startActivity(new Intent(getActivity(), BasketballActivity.class).putExtra("postion", postion).putExtra("title", title).putExtra("type", type).putExtra("count", count));
     }
 
     class WelcomePagerAdapter extends PagerAdapter {

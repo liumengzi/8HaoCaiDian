@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="#d97fbd"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:text="胜"
+        android:textColor="@color/C_white" />
+
+    <com.tuding.client.eightnumcolour.view.MyGridView
+        android:id="@+id/my_gv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:numColumns="5"/>
+</LinearLayout>

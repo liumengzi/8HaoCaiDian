@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.tuding.client.eightnumcolour"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+    package="com.tuding.client.eightnumcolour">
 
     <application
         android:name=".application.RBBaseApplication"
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        tools:replace="android:allowBackup"
-        >
+        tools:replace="android:allowBackup">
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/TranslucentTheme"
-            >
+            android:theme="@style/TranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,64 +23,34 @@
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/TranslucentTheme"
-            ></activity>
+            android:theme="@style/TranslucentTheme">
+
+        </activity>
         <activity
             android:name=".activity.RegisterActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".activity.RetrievePasswordActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".activity.BetActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".activity.SetNickNameAndPsActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".activity.SetActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".activity.LotteryResultsActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:theme="@style/TranslucentTheme" />
         <activity
-            android:name=".activity.DrawMoneyManagerActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.ConnactServiceActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.FindBackPayPsActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.ChargeActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.CertificationActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.PsManagerActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.AccountDetailActivity"
-            android:theme="@style/TranslucentTheme"
-            />
-        <activity
-            android:name=".activity.CashOutActivity"
-            android:theme="@style/TranslucentTheme"
-            />
+            android:name=".activity.BasketballActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.LotteryResultsInfoListActivity"
+            android:theme="@style/TranslucentTheme"  />
+        <activity android:name=".activity.LotteryResultsInfoActivity"
+            android:theme="@style/TranslucentTheme" />
     </application>
 
 </manifest>

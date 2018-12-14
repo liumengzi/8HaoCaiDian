@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#fff6ed"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="2018-12-11 星期二 3场比赛"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp" />
+</android.support.constraint.ConstraintLayout>

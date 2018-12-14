@@ -157,12 +157,14 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:id="@+id/over_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/title"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
+                android:padding="6dp"
                 android:src="@drawable/shuaxin" />
 
             <TextView
@@ -194,6 +196,7 @@
             android:paddingTop="15dp">
 
             <RelativeLayout
+                android:id="@+id/daletou_rl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -226,6 +229,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/lottery_results_rl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -244,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@+id/kaijiang_iv"
-                    android:text="大乐透"
+                    android:text="开奖结果"
                     android:textColor="@color/colorBlack" />
 
                 <TextView
@@ -252,7 +256,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/kaijiang_title_tv"
                     android:layout_toRightOf="@+id/kaijiang_iv"
-                    android:text="2元可中1000万"
+                    android:text="最快知道中奖"
                     android:textColor="@color/colorBlack"
                     android:textSize="12sp" />
             </RelativeLayout>

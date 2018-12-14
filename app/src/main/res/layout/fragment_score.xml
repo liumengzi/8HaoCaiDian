@@ -15,50 +15,14 @@
         android:layout_height="60dp"
         android:background="@color/C_main">
 
-        <RadioGroup
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_button_orange5dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/recycle_rb"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_left_orange10dp"
-                android:button="@null"
-                android:checked="true"
-                android:gravity="center"
-                android:text="足球"
-                android:textColor="@drawable/white_text_selector" />
-
-            <RadioButton
-                android:id="@+id/investment_rb"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_right_orange10dp"
-                android:button="@null"
-                android:gravity="center"
-                android:text="篮球"
-                android:textColor="@drawable/white_text_selector" />
-        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:text="赛事库"
+            android:layout_centerInParent="true"
+            android:text="比分直播"
             android:textColor="@color/C_white"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -73,10 +37,11 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/match_type_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="竞彩足球"
-
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -93,10 +58,12 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/xiala"
+                android:gravity="center"
                 android:text="2018-06-27"
-
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -113,10 +80,12 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/screen_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:drawablePadding="10dp"
                 android:drawableRight="@drawable/xiala"
+                android:gravity="center"
                 android:text="筛选"
 
                 android:textSize="15sp" />
