@@ -48,17 +48,18 @@
             android:layout_height="wrap_content"
             android:text="真实姓名"
             android:textColor="@color/colorBlack"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:layout_marginLeft="10dp"
             />
 
         <EditText
+            android:id="@+id/et_real_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
             android:hint="请输入真实姓名"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="@color/colorBlack"
             android:layout_marginLeft="30dp"
             />
@@ -78,17 +79,18 @@
             android:layout_height="wrap_content"
             android:text="身份证号"
             android:textColor="@color/colorBlack"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:layout_marginLeft="10dp"
             />
 
         <EditText
+            android:id="@+id/et_idcardno"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
             android:hint="请输入身份证号"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="@color/colorBlack"
             android:layout_marginLeft="30dp"
             />
@@ -98,8 +100,9 @@
         android:layout_height="1dp"
         android:background="#e5e5e5"/>
     <Button
+        android:id="@+id/bt_renzheng"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"

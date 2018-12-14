@@ -14,7 +14,7 @@
         tools:replace="android:allowBackup"
         >
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/TranslucentTheme"
             >
             <intent-filter>
@@ -24,10 +24,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/TranslucentTheme"
-            >
-        </activity>
+            ></activity>
         <activity
             android:name=".activity.RegisterActivity"
             android:theme="@style/TranslucentTheme"
@@ -52,8 +51,10 @@
             android:name=".activity.LotteryResultsActivity"
             android:theme="@style/TranslucentTheme"
             />
-        <activity android:name=".activity.DrawMoneyManagerActivity"
-            android:theme="@style/TranslucentTheme"/>
+        <activity
+            android:name=".activity.DrawMoneyManagerActivity"
+            android:theme="@style/TranslucentTheme"
+            />
         <activity
             android:name=".activity.ConnactServiceActivity"
             android:theme="@style/TranslucentTheme"
@@ -64,6 +65,22 @@
             />
         <activity
             android:name=".activity.ChargeActivity"
+            android:theme="@style/TranslucentTheme"
+            />
+        <activity
+            android:name=".activity.CertificationActivity"
+            android:theme="@style/TranslucentTheme"
+            />
+        <activity
+            android:name=".activity.PsManagerActivity"
+            android:theme="@style/TranslucentTheme"
+            />
+        <activity
+            android:name=".activity.AccountDetailActivity"
+            android:theme="@style/TranslucentTheme"
+            />
+        <activity
+            android:name=".activity.CashOutActivity"
             android:theme="@style/TranslucentTheme"
             />
     </application>
