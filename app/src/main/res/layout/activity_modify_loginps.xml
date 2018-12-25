@@ -49,9 +49,11 @@
             android:textColor="@color/colorBlack"
             />
         <EditText
+            android:id="@+id/update_old_password_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:inputType="textPassword"
             android:hint="请输入旧密码"
             android:background="@null"
             android:textSize="15sp"
@@ -77,10 +79,12 @@
             android:textColor="@color/colorBlack"
             />
         <EditText
+            android:id="@+id/update_new_password_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:hint="6-20位字母数字组合，区分大小写"
+            android:inputType="textPassword"
             android:background="@null"
             android:textSize="15sp"
             android:textColor="@color/colorBlack"
@@ -105,10 +109,12 @@
             android:textColor="@color/colorBlack"
             />
         <EditText
+            android:id="@+id/update_new_passwordqueren_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:hint="再次输入新密码"
+            android:inputType="textPassword"
             android:background="@null"
             android:textSize="15sp"
             android:textColor="@color/colorBlack"
@@ -130,6 +136,7 @@
         android:layout_marginRight="20dp"
         />
     <Button
+        android:id="@+id/update_loginpassword_confirm_bt"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="下一步"

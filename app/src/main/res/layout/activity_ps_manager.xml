@@ -38,6 +38,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/login_password_rl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/C_white"
@@ -74,6 +75,7 @@
         />
 
     <RelativeLayout
+        android:id="@+id/pay_password_rl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/C_white"
@@ -109,6 +111,7 @@
         />
 
     <RelativeLayout
+        android:id="@+id/find_pay_password_rl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/C_white"

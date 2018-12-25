@@ -2,6 +2,7 @@ package com.tuding.client.eightnumcolour.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,6 +43,7 @@ public class RealNameActivity extends RBBaseActivity {
                  @Override
                  public void onSuccess(String s, Call call, Response response) {
 
+                     Log.e("dasdad",s);
                      try {
                          JSONObject  jsonObject = new JSONObject(s);
 

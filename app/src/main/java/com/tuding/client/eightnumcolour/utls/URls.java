@@ -2,7 +2,8 @@ package com.tuding.client.eightnumcolour.utls;
 
 public class URls {
     //http://bhcd-admin.tudingsoft.com/index.php/Api/index/get_banner
-    public static final String Header = "http://bhcd-admin.tudingsoft.com/Api/";
+//    public static final String Header = "http://bhcd-admin.tudingsoft.com/Api/";
+    public static final String Header = "http://bhcd-admin.tudingsoft.com/index.php/Api/";
     public static final String GET_BANNER = Header + "Index/get_banner";
     public static final String LOGIN = Header + "User/login";
     public static final String GET_SMS_CODE = Header + "User&a=mobile_login_code";
@@ -25,4 +26,6 @@ public class URls {
     public static final String USER_CASH_RECORD = Header + "Member/user_cash_record";
     public static final String REAL_NAME_ADD = Header + "Member/real_name_add";
     public static final String REAL_NAME = Header + "member/real_name";
+
+    public static final String MODIFY_PASS = Header + "Member/modify_pass";
 }

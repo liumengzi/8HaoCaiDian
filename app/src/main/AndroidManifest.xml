@@ -55,7 +55,13 @@
         <activity android:name=".activity.AccountDetailActivity"  android:theme="@style/TranslucentTheme" />
 
         <activity android:name=".activity.RealNameActivity"  android:theme="@style/TranslucentTheme" />
-        <activity android:name=".activity.PasswordManagementActivity"></activity>
+
+        <activity android:name=".activity.PsManagerActivity"  android:theme="@style/TranslucentTheme" ></activity>
+
+
+        <activity android:name=".activity.ModifyLoginPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
+        <activity android:name=".activity.InitPayPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
+        <activity android:name=".activity.FindBackPayPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
 
     </application>
 

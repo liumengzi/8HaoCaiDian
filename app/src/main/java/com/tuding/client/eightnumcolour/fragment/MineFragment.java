@@ -10,13 +10,12 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.tuding.client.eightnumcolour.R;
 import com.tuding.client.eightnumcolour.activity.AccountDetailActivity;
 import com.tuding.client.eightnumcolour.activity.LotteryResultsActivity;
-import com.tuding.client.eightnumcolour.activity.PasswordManagementActivity;
+import com.tuding.client.eightnumcolour.activity.PsManagerActivity;
 import com.tuding.client.eightnumcolour.activity.RealNameActivity;
 import com.tuding.client.eightnumcolour.activity.SetActivity;
 import com.tuding.client.eightnumcolour.adapter.HomeAdapter;
@@ -116,7 +115,7 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
 
             case  4 :
 
-                startActivity(new Intent(getContext(),PasswordManagementActivity.class));
+                startActivity(new Intent(getContext(),PsManagerActivity.class));
 
                 break;
         }
