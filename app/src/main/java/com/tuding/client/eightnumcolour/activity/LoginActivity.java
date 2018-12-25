@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
@@ -107,7 +108,7 @@ public class LoginActivity extends RBBaseActivity implements View.OnClickListene
                         startActivity(new Intent(mContext, MainActivity.class));
                     } else if (0 == data.code) {
                         ToastUtil.showToast(data.msg);
-                        startActivity(new Intent(mContext, MainActivity.class));
+
                     }
                 }
             }

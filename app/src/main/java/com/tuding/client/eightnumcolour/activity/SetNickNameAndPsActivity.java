@@ -88,7 +88,7 @@ public class SetNickNameAndPsActivity extends RBBaseActivity {
     }
 
     private void setPs() {
-        OkGo.post(URls.SET_NICK_PS).params("nickname", nickname).params("password", ps).params
+        OkGo.post("http://bhcd-admin.tudingsoft.com/index.php/Api/User/set_nickname").params("nickname", nickname).params("password", ps).params
                 ("confirm_pass", secondPs).execute(new StringCallback() {
             @Override
             public void onSuccess(String s, Call call, Response response) {

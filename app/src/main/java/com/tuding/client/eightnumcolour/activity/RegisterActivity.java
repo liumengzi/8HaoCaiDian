@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.tuding.client.eightnumcolour.R;
+import com.tuding.client.eightnumcolour.bean.GET_REGISTER_CODEBean;
 import com.tuding.client.eightnumcolour.utls.ToastUtil;
 import com.tuding.client.eightnumcolour.utls.URls;
 import com.tuding.client.eightnumcolour.utls.Util;
@@ -22,6 +25,7 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 public class RegisterActivity extends RBBaseActivity {
+    private static final String TAG = "RegisterActivity";
     @Bind(R.id.et_phone)
     EditText etPhone;
     @Bind(R.id.icon_yan)
@@ -62,7 +66,28 @@ public class RegisterActivity extends RBBaseActivity {
         tvNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, SetNickNameAndPsActivity.class));
+                String mobile = etPhone.getText().toString().trim();
+                String sms_code = etSms.getText().toString().trim();
+                if ("".equals(phone) || "".equals(phone)) {
+                    ToastUtil.showToast("手机号及验证码不能为空");
+                    return;
+                }
+
+                OkGo.post(URls.REGISTER).params("code", "").params("mobile", mobile).params("sms_code", sms_code).execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(String s, Call call, Response response) {
+                        Log.d(TAG, "onSuccess: " + s);
+                        GET_REGISTER_CODEBean get_register_codeBean = new Gson().fromJson(s, GET_REGISTER_CODEBean.class);
+                        if (get_register_codeBean.getCode() == 0) {
+
+                            ToastUtil.showToast(get_register_codeBean.getMsg());
+                        } else {
+                            startActivity(new Intent(RegisterActivity.this, SetNickNameAndPsActivity.class));
+                        }
+
+                    }
+                });
+
             }
         });
         ivBack.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +106,12 @@ public class RegisterActivity extends RBBaseActivity {
         OkGo.post(URls.GET_REGISTER_CODE).params("mobile", phone).execute(new StringCallback() {
             @Override
             public void onSuccess(String s, Call call, Response response) {
+                GET_REGISTER_CODEBean get_register_codeBean = new Gson().fromJson(s, GET_REGISTER_CODEBean.class);
+                int code = get_register_codeBean.getCode();
+                if (code == 0) {
+                    String msg = get_register_codeBean.getMsg();
+                    Toast.makeText(RegisterActivity.this, msg, Toast.LENGTH_SHORT).show();
+                }
                 Log.d("messagemessage", s);
             }
 

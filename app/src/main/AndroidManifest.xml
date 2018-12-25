@@ -15,16 +15,16 @@
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/TranslucentTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/TranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.LoginActivity"
-            android:theme="@style/TranslucentTheme">
-
         </activity>
         <activity
             android:name=".activity.RegisterActivity"
@@ -51,6 +51,12 @@
             android:theme="@style/TranslucentTheme"  />
         <activity android:name=".activity.LotteryResultsInfoActivity"
             android:theme="@style/TranslucentTheme" />
+
+        <activity android:name=".activity.AccountDetailActivity"  android:theme="@style/TranslucentTheme" />
+
+        <activity android:name=".activity.RealNameActivity"  android:theme="@style/TranslucentTheme" />
+        <activity android:name=".activity.PasswordManagementActivity"></activity>
+
     </application>
 
 </manifest>
