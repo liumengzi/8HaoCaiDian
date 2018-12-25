@@ -54,9 +54,11 @@ public class LotteryResultsActivity extends RBBaseActivity implements AdapterVie
 
     @Override
     public void initValue() {
-        OkGo.get(URls.NOTERESULT).execute(new StringCallback() {
+        OkGo.<String>get(URls.NOTERESULT).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 NOTERESULTBean noteresultBean = new Gson().fromJson(s, NOTERESULTBean.class);
                 if (noteresultBean.getCode() == 1) {

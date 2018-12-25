@@ -15,7 +15,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.internal.framed.Variant;
 
 public class LeagueAdapter extends BaseAdapter implements CompoundButton.OnCheckedChangeListener {
     ScoreFragment scoreFragment;

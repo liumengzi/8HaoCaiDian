@@ -105,9 +105,11 @@ public class BetActivity extends RBBaseActivity implements AdapterView.OnItemCli
 
     @Override
     public void initValue() {
-        OkGo.get(URls.DLTPERIOD).execute(new StringCallback() {
+        OkGo.<String>get(URls.DLTPERIOD).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 DLTPERIODBean dltperiodBean = new Gson().fromJson(s, DLTPERIODBean.class);
                 if (dltperiodBean.getCode() == 1) {

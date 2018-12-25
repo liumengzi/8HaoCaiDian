@@ -68,9 +68,11 @@ public class CertificationActivity extends RBBaseActivity {
     }
 
     private void getCertification() {
-        OkGo.get(URls.GET_CERTIFICATION).execute(new StringCallback() {
+        OkGo.<String>get(URls.GET_CERTIFICATION).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 JSONObject jsonObject= null;
                 try {
                     jsonObject = new JSONObject(s);
@@ -94,18 +96,21 @@ public class CertificationActivity extends RBBaseActivity {
             }
 
             @Override
-            public void onError(Call call, Response response, Exception e) {
-                super.onError(call, response, e);
+            public void onError(com.lzy.okgo.model.Response<String> response) {
+                super.onError(response);
             }
+
         });
 
     }
 
     private void certification() {
-        OkGo.post(URls.CERTIFICATION).params("realname", name).params("idcard", cardno).execute
+        OkGo.<String>post(URls.CERTIFICATION).params("realname", name).params("idcard", cardno).execute
                 (new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 loadingDialog.dismiss();
                 try {
                     JSONObject jsonObject = new JSONObject(s);
@@ -122,11 +127,13 @@ public class CertificationActivity extends RBBaseActivity {
 
             }
 
-            @Override
-            public void onError(Call call, Response response, Exception e) {
-                super.onError(call, response, e);
-                loadingDialog.dismiss();
-            }
+                    @Override
+                    public void onError(com.lzy.okgo.model.Response<String> response) {
+                        super.onError(response);
+                        loadingDialog.dismiss();
+                    }
+
+
         });
     }
 

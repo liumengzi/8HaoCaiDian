@@ -56,10 +56,11 @@ public class LotteryResultsInfoListActivity extends RBBaseActivity implements Ad
     @Override
     public void initValue() {
 
-        OkGo.get(URls.RESULTLIST).params("expect_type", expect_type).execute(new StringCallback() {
+        OkGo.<String>get(URls.RESULTLIST).params("expect_type", expect_type).execute(new StringCallback() {
             @SuppressLint("LongLogTag")
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
                 Log.d(TAG, "onSuccess: " + s);
                 RESULTLISTBean resultlistBean = new Gson().fromJson(s, RESULTLISTBean.class);
                 if (resultlistBean.getCode() == 1) {
@@ -70,6 +71,7 @@ public class LotteryResultsInfoListActivity extends RBBaseActivity implements Ad
                 }
 
             }
+
         });
     }
 

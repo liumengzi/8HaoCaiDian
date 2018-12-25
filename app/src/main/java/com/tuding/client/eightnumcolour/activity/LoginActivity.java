@@ -96,9 +96,11 @@ public class LoginActivity extends RBBaseActivity implements View.OnClickListene
     }
 
     private void login() {
-        OkGo.post(URls.LOGIN).params("mobile", phone).params("password", ps).execute(new StringCallback() {
+        OkGo.<String>post(URls.LOGIN).params("mobile", phone).params("password", ps).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.i("loginsuccess", s.toString());
                 loadingDialog.dismiss();
                 Data data = new Gson().fromJson(s, Data.class);
@@ -111,12 +113,12 @@ public class LoginActivity extends RBBaseActivity implements View.OnClickListene
                     }
                 }
             }
-
             @Override
-            public void onError(Call call, Response response, Exception e) {
+            public void onError(com.lzy.okgo.model.Response<String> response) {
+                super.onError(response);
                 loadingDialog.dismiss();
-                super.onError(call, response, e);
             }
+
         });
     }
 }

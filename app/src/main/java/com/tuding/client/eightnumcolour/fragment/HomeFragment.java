@@ -190,20 +190,23 @@ public class HomeFragment extends RBBaseFragment implements ViewPager.OnPageChan
 
     @Override
     public void initValue() {
-        OkGo.get(URls.GET_BANNER).execute(new StringCallback() {
+        OkGo.<String>get(URls.GET_BANNER).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onError(com.lzy.okgo.model.Response<String> response) {
+                super.onError(response);
+                Log.e(TAG, "onError: " + response.getException().getMessage());
+            }
+
+            @Override
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 HomeBean homeBean = new Gson().fromJson(s, HomeBean.class);
                 data = homeBean.getData();
 
             }
 
-            @Override
-            public void onError(Call call, Response response, Exception e) {
-                super.onError(call, response, e);
-                Log.e(TAG, "onError: " + e);
-            }
         });
     }
 

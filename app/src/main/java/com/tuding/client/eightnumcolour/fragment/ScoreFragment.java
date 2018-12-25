@@ -170,9 +170,11 @@ public class ScoreFragment extends RBBaseFragment implements View.OnClickListene
     @Override
     public void initValue() {
         time = date_tv.getText().toString().trim();
-        OkGo.post(URls.MATCHRESULT).params("league", league).params("date", time).params("type", type).params("match_type", match_type).execute(new StringCallback() {
+        OkGo.<String>post(URls.MATCHRESULT).params("league", league).params("date", time).params("type", type).params("match_type", match_type).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 MATCHRESULTBean matchresultBean = new Gson().fromJson(s, MATCHRESULTBean.class);
                 if (matchresultBean.getCode() == 1) {

@@ -4,8 +4,14 @@ import android.content.Context;
 import android.os.Handler;
 
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cookie.CookieJarImpl;
+import com.lzy.okgo.cookie.store.DBCookieStore;
+import com.lzy.okgo.cookie.store.MemoryCookieStore;
+import com.lzy.okgo.cookie.store.SPCookieStore;
 
 import org.litepal.LitePalApplication;
+
+import okhttp3.OkHttpClient;
 
 /**
  * Application
@@ -31,7 +37,11 @@ public class RBBaseApplication extends LitePalApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        OkGo.getInstance().debug("OKGO").init(this);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.cookieJar(new CookieJarImpl(new SPCookieStore(this)));
+        builder.cookieJar(new CookieJarImpl(new DBCookieStore(this)));
+        builder.cookieJar(new CookieJarImpl(new MemoryCookieStore()));
+        OkGo.getInstance().setOkHttpClient(builder.build()).init(this);
        /* WXPay.init(this, "wxaa9bd6597c1f57ae");
         OkGo.getInstance().debug("OKGO").init(this);
 

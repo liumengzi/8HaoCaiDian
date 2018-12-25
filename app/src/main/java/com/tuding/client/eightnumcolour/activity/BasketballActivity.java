@@ -195,9 +195,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     }
 
     private void getBTMATCH() {
-        OkGo.get(URls.BTMATCH).execute(new StringCallback() {
+        OkGo.<String>get(URls.BTMATCH).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 BTMATCHBean btmatchBean = new Gson().fromJson(s, BTMATCHBean.class);
                 if (btmatchBean.getCode() == 1) {
@@ -216,9 +218,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     }
 
     private void getBTMATCH1() {
-        OkGo.get(URls.BTMATCH).params("is_single", 1).execute(new StringCallback() {
+        OkGo.<String>get(URls.BTMATCH).params("is_single", 1).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 BTMATCHBean btmatchBean = new Gson().fromJson(s, BTMATCHBean.class);
                 if (btmatchBean.getCode() == 1) {
@@ -237,9 +241,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     }
 
     private void getFT9MATCH() {
-        OkGo.get(URls.FT9MATCH).execute(new StringCallback() {
+        OkGo.<String>get(URls.FT9MATCH).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 FT9MATCHBean ft9MATCHBean = new Gson().fromJson(s, FT9MATCHBean.class);
                 if (ft9MATCHBean.getCode() == 1) {
@@ -259,9 +265,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     }
 
     private void getFT6MATCH() {
-        OkGo.get(URls.FT6MATCH).execute(new StringCallback() {
+        OkGo.<String>get(URls.FT6MATCH).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 FT6MATCHBean ft6MATCHBean = new Gson().fromJson(s, FT6MATCHBean.class);
                 if (ft6MATCHBean.getCode() == 1) {
@@ -280,9 +288,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     }
 
     private void getFTMATCH() {
-        OkGo.get(URls.FTMATCH).execute(new StringCallback() {
+        OkGo.<String>get(URls.FTMATCH).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 FTMATCHBean ftmatchBean = new Gson().fromJson(s, FTMATCHBean.class);
                 if (ftmatchBean.getCode() == 1) {
@@ -303,9 +313,11 @@ public class BasketballActivity extends RBBaseActivity implements View.OnClickLi
     int is_single = 1;
 
     private void getFTMATCH1() {
-        OkGo.get(URls.FTMATCH).params("is_single", is_single).execute(new StringCallback() {
+        OkGo.<String>get(URls.FTMATCH).params("is_single", is_single).execute(new StringCallback() {
             @Override
-            public void onSuccess(String s, Call call, Response response) {
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                String s = response.body();
+
                 Log.d(TAG, "onSuccess: " + s);
                 FTMATCHBean ftmatchBean = new Gson().fromJson(s, FTMATCHBean.class);
                 if (ftmatchBean.getCode() == 1) {

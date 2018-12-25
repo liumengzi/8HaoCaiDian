@@ -37,11 +37,13 @@ public class RealNameActivity extends RBBaseActivity {
 
     private void requestData() {
 
-        OkGo.get(URls.REAL_NAME)
+        OkGo.<String>get("http://bhcd-admin.tudingsoft.com/index.php/Api/member/real_name")
              .tag(this)
              .execute(new StringCallback() {
                  @Override
-                 public void onSuccess(String s, Call call, Response response) {
+                 public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                     String s = response.body();
+
 
                      Log.e("dasdad",s);
                      try {
@@ -101,13 +103,15 @@ public class RealNameActivity extends RBBaseActivity {
         }
     };
     private void request(){
-        OkGo.post(URls.REAL_NAME_ADD)
+        OkGo.<String>post(URls.REAL_NAME_ADD)
                 .tag(this)
                 .params("realname",real_name_name_et.getText().toString().replaceAll(" ", ""))
                 .params("idcard",real_name_num_et.getText().toString().replaceAll(" ", ""))
                 .execute(new StringCallback() {
                     @Override
-                    public void onSuccess(String s, Call call, Response response) {
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        String s = response.body();
+
 
                         try {
 

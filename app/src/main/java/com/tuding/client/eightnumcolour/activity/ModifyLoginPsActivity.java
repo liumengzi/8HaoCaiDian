@@ -58,14 +58,16 @@ public class ModifyLoginPsActivity extends RBBaseActivity {
     }
 
     private void request(){
-        OkGo.post(URls.MODIFY_PASS)
+        OkGo.<String>post(URls.MODIFY_PASS)
              .tag(this)
              .params("oldpass",old)
              .params("password",news)
                 .params("confirm_pass",queren)
              .execute(new StringCallback() {
                  @Override
-                 public void onSuccess(String s, Call call, Response response) {
+                 public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                     String s = response.body();
+
 
                      try {
 

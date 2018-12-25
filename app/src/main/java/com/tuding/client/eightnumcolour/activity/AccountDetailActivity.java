@@ -45,12 +45,13 @@ public class AccountDetailActivity extends RBBaseActivity {
     @Override
     public void initValue() {
 
-        OkGo.get(URls.USER_CASH_RECORD)
+        OkGo.<String>get(URls.USER_CASH_RECORD)
                 .tag(this)
                 .params("page",1)
                 .execute(new StringCallback() {
                     @Override
-                    public void onSuccess(String s, Call call, Response response) {
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        String s = response.body();
 
                         try {
                             JSONObject jsonObject = new JSONObject(s);
@@ -67,8 +68,8 @@ public class AccountDetailActivity extends RBBaseActivity {
 
 
 
-
                     }
+
                 });
     }
 }
