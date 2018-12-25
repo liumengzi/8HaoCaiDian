@@ -22,4 +22,7 @@ public class URls {
     public static final String CERTIFICATION = Header + "Member/real_name_add";
     public static final String GET_CERTIFICATION = Header + "member/real_name";
 
+    public static final String USER_CASH_RECORD = Header + "Member/user_cash_record";
+    public static final String REAL_NAME_ADD = Header + "Member/real_name_add";
+    public static final String REAL_NAME = Header + "member/real_name";
 }

@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ public class LotteryResultsActivity extends RBBaseActivity implements AdapterVie
     private LotteryResultsAdapter lotteryResultsAdapter;
     private String expect_type;
     private String name;
+    private ImageView mResults_back_iv;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +41,13 @@ public class LotteryResultsActivity extends RBBaseActivity implements AdapterVie
         ListView lottery_resuluts_lv = findViewById(R.id.lottery_resuluts_lv);
         lotteryResultsAdapter = new LotteryResultsAdapter(this);
 
+        mResults_back_iv = (ImageView) findViewById(R.id.results_back_iv);
+        mResults_back_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         lottery_resuluts_lv.setAdapter(lotteryResultsAdapter);
         lottery_resuluts_lv.setOnItemClickListener(this);
     }

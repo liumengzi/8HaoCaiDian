@@ -51,6 +51,12 @@
             android:theme="@style/TranslucentTheme"  />
         <activity android:name=".activity.LotteryResultsInfoActivity"
             android:theme="@style/TranslucentTheme" />
+
+        <activity android:name=".activity.AccountDetailActivity"  android:theme="@style/TranslucentTheme" />
+
+        <activity android:name=".activity.RealNameActivity"  android:theme="@style/TranslucentTheme" />
+        <activity android:name=".activity.PasswordManagementActivity"></activity>
+
     </application>
 
 </manifest>
