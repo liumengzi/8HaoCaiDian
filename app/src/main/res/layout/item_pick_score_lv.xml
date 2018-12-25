@@ -5,19 +5,49 @@
 
     <TextView
         android:id="@+id/name_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="15dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:background="#d97fbd"
-        android:layout_marginLeft="5dp"
         android:gravity="center"
         android:text="胜"
         android:textColor="@color/C_white" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="15dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#e4d2c8"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/C_white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#e7756a"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/C_white"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <com.tuding.client.eightnumcolour.view.MyGridView
         android:id="@+id/my_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:numColumns="5"/>
+        android:numColumns="5" />
 </LinearLayout>

@@ -191,9 +191,13 @@ public class BasketballExpandableAdapter extends BaseExpandableListAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        if (viewHolder.all_play_tv != null) {
+            viewHolder.all_play_tv.setTag(childPosition);
+            viewHolder.all_play_tv.setOnClickListener(scoreClickListener);
+        }
         switch (type) {
             case 0:
-                setType4(groupPosition,childPosition);
+                setType4(groupPosition, childPosition);
                 break;
             case 1:
                 if (viewHolder.pick_score_tv != null) {
@@ -413,15 +417,18 @@ public class BasketballExpandableAdapter extends BaseExpandableListAdapter {
         viewHolder.away_team_tv.setText(away_team);
         viewHolder.league_tv.setText(number);
         viewHolder.numb_tv.setText(league);
-        viewHolder.quan_tv.setText("1");
-        viewHolder.ban_tv.setText("0");
+        if (viewHolder.quan_tv != null) {
 
-        if (concede.contains("-")) {
-            viewHolder.quan_tv.setBackgroundColor(Color.parseColor("#acb57e"));
-            viewHolder.quan_tv.setText(concede);
-        } else {
-            viewHolder.quan_tv.setBackgroundColor(Color.parseColor("#e7756a"));
-            viewHolder.quan_tv.setText("+" + concede);
+            viewHolder.quan_tv.setText("1");
+            viewHolder.ban_tv.setText("0");
+
+            if (concede.contains("-")) {
+                viewHolder.quan_tv.setBackgroundColor(Color.parseColor("#acb57e"));
+                viewHolder.quan_tv.setText(concede);
+            } else {
+                viewHolder.quan_tv.setBackgroundColor(Color.parseColor("#e7756a"));
+                viewHolder.quan_tv.setText("+" + concede);
+            }
         }
         if (spf != null) {
             viewHolder.ban_tv1.setText(spf.get(0).getName() + " " + spf.get(0).getOdds());
@@ -455,6 +462,8 @@ public class BasketballExpandableAdapter extends BaseExpandableListAdapter {
             });
             ListView score_lv = inflate.findViewById(R.id.score_lv);
             PickScoreAdapter pickScoreAdapter = new PickScoreAdapter(basketballActivity);
+            FTMATCHBean.DataBean.MatchListBeanX.MatchListBean.OddsBean odds = data1.getMatchList().get(0).getMatchList().get(tag).getOdds();
+            pickScoreAdapter.setData(odds);
             score_lv.setAdapter(pickScoreAdapter);
             if (popupWindow != null && popupWindow.isShowing()) {
                 popupWindow.dismiss();
@@ -506,6 +515,7 @@ public class BasketballExpandableAdapter extends BaseExpandableListAdapter {
         private final TextView xiao_tv2;
         private final TextView xiao_tv3;
         private final TextView numb_tv;
+        private final TextView all_play_tv;
 
         public ViewHolder(View convertView) {
             pick_score_tv = convertView.findViewById(R.id.pick_score_tv);
@@ -530,6 +540,7 @@ public class BasketballExpandableAdapter extends BaseExpandableListAdapter {
 
 
             numb_tv = convertView.findViewById(R.id.numb_tv);
+            all_play_tv = convertView.findViewById(R.id.all_play_tv);
 
         }
     }
