@@ -1936,12 +1936,12 @@
         "source": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\src\\main\\res\\drawable-xxhdpi\\dianpu.png"
     },
     {
-        "merged": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_san.png.flat",
-        "source": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\src\\main\\res\\drawable-hdpi\\san.png"
-    },
-    {
         "merged": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\build\\intermediates\\res\\merged\\debug\\drawable_renzheng_bg.xml.flat",
         "source": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\src\\main\\res\\drawable\\renzheng_bg.xml"
+    },
+    {
+        "merged": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_san.png.flat",
+        "source": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\src\\main\\res\\drawable-hdpi\\san.png"
     },
     {
         "merged": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",

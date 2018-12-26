@@ -74,6 +74,8 @@ public class RegisterActivity extends RBBaseActivity {
                 }
 
                 OkGo.<String>post(URls.REGISTER).params("code", "").params("mobile", mobile).params("sms_code", sms_code).execute(new StringCallback() {
+
+
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                         String s = response.body();
@@ -118,11 +120,14 @@ public class RegisterActivity extends RBBaseActivity {
                 }
                 Log.d("messagemessage", s);
             }
+
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
                 Log.d("messagemessage", response.getException().getMessage());
+
             }
+
         });
     }
 

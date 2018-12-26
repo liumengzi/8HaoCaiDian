@@ -8,18 +8,18 @@ import butterknife.ButterKnife.ViewBinder;
 public class LoginActivity$$ViewBinder<T extends com.tuding.client.eightnumcolour.activity.LoginActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131296355, "field 'etPhone'");
-    target.etPhone = finder.castView(view, 2131296355, "field 'etPhone'");
-    view = finder.findRequiredView(source, 2131296356, "field 'etPs'");
-    target.etPs = finder.castView(view, 2131296356, "field 'etPs'");
-    view = finder.findRequiredView(source, 2131296499, "field 'retrievePasswordTv'");
-    target.retrievePasswordTv = finder.castView(view, 2131296499, "field 'retrievePasswordTv'");
-    view = finder.findRequiredView(source, 2131296426, "field 'loginTv'");
-    target.loginTv = finder.castView(view, 2131296426, "field 'loginTv'");
-    view = finder.findRequiredView(source, 2131296496, "field 'registerTv'");
-    target.registerTv = finder.castView(view, 2131296496, "field 'registerTv'");
-    view = finder.findRequiredView(source, 2131296408, "field 'ivBack'");
-    target.ivBack = finder.castView(view, 2131296408, "field 'ivBack'");
+    view = finder.findRequiredView(source, 2131296356, "field 'etPhone'");
+    target.etPhone = finder.castView(view, 2131296356, "field 'etPhone'");
+    view = finder.findRequiredView(source, 2131296357, "field 'etPs'");
+    target.etPs = finder.castView(view, 2131296357, "field 'etPs'");
+    view = finder.findRequiredView(source, 2131296503, "field 'retrievePasswordTv'");
+    target.retrievePasswordTv = finder.castView(view, 2131296503, "field 'retrievePasswordTv'");
+    view = finder.findRequiredView(source, 2131296428, "field 'loginTv'");
+    target.loginTv = finder.castView(view, 2131296428, "field 'loginTv'");
+    view = finder.findRequiredView(source, 2131296500, "field 'registerTv'");
+    target.registerTv = finder.castView(view, 2131296500, "field 'registerTv'");
+    view = finder.findRequiredView(source, 2131296409, "field 'ivBack'");
+    target.ivBack = finder.castView(view, 2131296409, "field 'ivBack'");
   }
 
   @Override public void unbind(T target) {

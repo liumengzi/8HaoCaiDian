@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -89,7 +88,7 @@ public class SetNickNameAndPsActivity extends RBBaseActivity {
     }
 
     private void setPs() {
-        OkGo.<String>post(URls.SET_NICK_PS).params("nickname", nickname).params("password", ps).params
+        OkGo.<String>post("http://bhcd-admin.tudingsoft.com/index.php/Api/User/set_nickname").params("nickname", nickname).params("password", ps).params
                 ("confirm_pass", secondPs).execute(new StringCallback() {
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
@@ -106,10 +105,12 @@ public class SetNickNameAndPsActivity extends RBBaseActivity {
                     }
                 }
             }
+
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
                 loadingDialog.dismiss();
+
             }
 
         });

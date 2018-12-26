@@ -1,5 +1,6 @@
 package com.tuding.client.eightnumcolour.bean;
 
+
 public class GET_REGISTER_CODEBean {
 
     /**

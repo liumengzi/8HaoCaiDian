@@ -27,15 +27,15 @@
         <activity
             android:name="com.tuding.client.eightnumcolour.activity.MainActivity"
             android:theme="@style/TranslucentTheme" >
+        </activity>
+        <activity
+            android:name="com.tuding.client.eightnumcolour.activity.LoginActivity"
+            android:theme="@style/TranslucentTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.tuding.client.eightnumcolour.activity.LoginActivity"
-            android:theme="@style/TranslucentTheme" >
         </activity>
         <activity
             android:name="com.tuding.client.eightnumcolour.activity.RegisterActivity"
