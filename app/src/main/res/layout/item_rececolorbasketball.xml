@@ -136,14 +136,17 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <CheckBox
                     android:id="@+id/ban_tv1"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="开"
-                    android:textColor="@color/colorBlack"
+                    android:background="@drawable/rad_bg_selector"
+                    android:button="@null"
+
+                    android:textColor="@drawable/text_bg_selector"
                     android:textSize="14sp" />
 
 
@@ -152,14 +155,17 @@
                     android:layout_height="1dp"
                     android:background="#eeeeee" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/quan_tv1"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="开"
-                    android:textColor="@color/colorBlack"
+                    android:background="@drawable/rad_bg_selector"
+                    android:button="@null"
+
+                    android:textColor="@drawable/text_bg_selector"
                     android:textSize="14sp" />
 
 
@@ -177,14 +183,17 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <CheckBox
                     android:id="@+id/ban_tv2"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="售"
-                    android:textColor="@color/colorBlack"
+                    android:background="@drawable/rad_bg_selector"
+                    android:button="@null"
+
+                    android:textColor="@drawable/text_bg_selector"
                     android:textSize="14sp" />
 
 
@@ -193,14 +202,17 @@
                     android:layout_height="1dp"
                     android:background="#eeeeee" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/quan_tv2"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="售"
-                    android:textColor="@color/colorBlack"
+                    android:background="@drawable/rad_bg_selector"
+                    android:button="@null"
+
+                    android:textColor="@drawable/text_bg_selector"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -210,6 +222,7 @@
                 android:background="#eeeeee" />
 
             <TextView
+                android:id="@+id/all_play_tv"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
