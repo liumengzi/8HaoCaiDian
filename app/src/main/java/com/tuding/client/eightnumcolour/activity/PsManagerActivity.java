@@ -44,6 +44,7 @@ public class PsManagerActivity extends RBBaseActivity {
 
                 case R.id.pay_password_rl :
                     startActivity(new Intent(PsManagerActivity.this,InitPayPsActivity.class));
+
                     break;
 
                 case R.id.find_pay_password_rl :

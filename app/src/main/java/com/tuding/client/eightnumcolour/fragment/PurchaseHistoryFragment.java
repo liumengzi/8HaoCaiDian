@@ -5,11 +5,16 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.Callback;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.tuding.client.eightnumcolour.R;
 import com.tuding.client.eightnumcolour.adapter.PurchaseHistoryAdapter;
 import com.tuding.client.eightnumcolour.adapter.ScoreAdapter;
@@ -17,6 +22,7 @@ import com.tuding.client.eightnumcolour.adapter.ScoreAdapter;
 import java.util.ArrayList;
 
 public class PurchaseHistoryFragment extends RBBaseFragment {
+    private static final String TAG = "PurchaseHistoryFragment";
     private static PurchaseHistoryFragment homeFragment;
 
     ArrayList<View> viewListView = new ArrayList<>();
@@ -127,6 +133,11 @@ public class PurchaseHistoryFragment extends RBBaseFragment {
 
     @Override
     public void initValue() {
-
+        OkGo.<String>get("http://bhcd-admin.tudingsoft.com/index.php/Api/Noterecord/noteRecord").params("page", 1).execute(new StringCallback() {
+            @Override
+            public void onSuccess(Response<String> response) {
+                Log.d(TAG, "onSuccess: " + response.body());
+            }
+        });
     }
 }

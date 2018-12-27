@@ -8,14 +8,14 @@ import butterknife.ButterKnife.ViewBinder;
 public class CertificationActivity$$ViewBinder<T extends com.tuding.client.eightnumcolour.activity.CertificationActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131296409, "field 'ivBack'");
-    target.ivBack = finder.castView(view, 2131296409, "field 'ivBack'");
-    view = finder.findRequiredView(source, 2131296358, "field 'etRealName'");
-    target.etRealName = finder.castView(view, 2131296358, "field 'etRealName'");
-    view = finder.findRequiredView(source, 2131296354, "field 'etIdcardno'");
-    target.etIdcardno = finder.castView(view, 2131296354, "field 'etIdcardno'");
-    view = finder.findRequiredView(source, 2131296305, "field 'btRenzheng'");
-    target.btRenzheng = finder.castView(view, 2131296305, "field 'btRenzheng'");
+    view = finder.findRequiredView(source, 2131296417, "field 'ivBack'");
+    target.ivBack = finder.castView(view, 2131296417, "field 'ivBack'");
+    view = finder.findRequiredView(source, 2131296365, "field 'etRealName'");
+    target.etRealName = finder.castView(view, 2131296365, "field 'etRealName'");
+    view = finder.findRequiredView(source, 2131296361, "field 'etIdcardno'");
+    target.etIdcardno = finder.castView(view, 2131296361, "field 'etIdcardno'");
+    view = finder.findRequiredView(source, 2131296310, "field 'btRenzheng'");
+    target.btRenzheng = finder.castView(view, 2131296310, "field 'btRenzheng'");
   }
 
   @Override public void unbind(T target) {

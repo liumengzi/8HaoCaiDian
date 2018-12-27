@@ -47,21 +47,48 @@
         <activity
             android:name=".activity.BasketballActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activity.LotteryResultsInfoListActivity"
-            android:theme="@style/TranslucentTheme"  />
-        <activity android:name=".activity.LotteryResultsInfoActivity"
+        <activity
+            android:name=".activity.LotteryResultsInfoListActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.LotteryResultsInfoActivity"
             android:theme="@style/TranslucentTheme" />
 
-        <activity android:name=".activity.AccountDetailActivity"  android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.AccountDetailActivity"
+            android:theme="@style/TranslucentTheme" />
 
-        <activity android:name=".activity.RealNameActivity"  android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.RealNameActivity"
+            android:theme="@style/TranslucentTheme" />
 
-        <activity android:name=".activity.PsManagerActivity"  android:theme="@style/TranslucentTheme" ></activity>
+        <activity
+            android:name=".activity.PsManagerActivity"
+            android:theme="@style/TranslucentTheme"></activity>
 
 
-        <activity android:name=".activity.ModifyLoginPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
-        <activity android:name=".activity.InitPayPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
-        <activity android:name=".activity.FindBackPayPsActivity"  android:theme="@style/TranslucentTheme" ></activity>
+        <activity
+            android:name=".activity.ModifyLoginPsActivity"
+            android:theme="@style/TranslucentTheme"></activity>
+        <activity
+            android:name=".activity.InitPayPsActivity"
+            android:theme="@style/TranslucentTheme"></activity>
+        <activity
+            android:name=".activity.FindBackPayPsActivity"
+            android:theme="@style/TranslucentTheme"></activity>
+        <activity
+            android:name=".activity.CashManagementActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.DestoonFinanceCashActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.BankCardManagementActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".activity.AddBankActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name=".activity.DrawTheDetailActivity" />
 
     </application>
 

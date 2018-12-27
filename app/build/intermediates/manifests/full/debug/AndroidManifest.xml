@@ -82,6 +82,19 @@
         <activity
             android:name="com.tuding.client.eightnumcolour.activity.FindBackPayPsActivity"
             android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.tuding.client.eightnumcolour.activity.CashManagementActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.tuding.client.eightnumcolour.activity.DestoonFinanceCashActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.tuding.client.eightnumcolour.activity.BankCardManagementActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.tuding.client.eightnumcolour.activity.AddBankActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name="com.tuding.client.eightnumcolour.activity.DrawTheDetailActivity" />
     </application>
 
 </manifest>

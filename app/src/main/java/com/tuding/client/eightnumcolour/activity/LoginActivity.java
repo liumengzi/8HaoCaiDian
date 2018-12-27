@@ -22,6 +22,7 @@ import com.tuding.client.eightnumcolour.utls.Util;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import me.alexrs.prefs.lib.Prefs;
 import okhttp3.Call;
 import okhttp3.Response;
 
@@ -108,12 +109,14 @@ public class LoginActivity extends RBBaseActivity implements View.OnClickListene
                 if (data != null) {
                     if (data.code == 1) {
                         startActivity(new Intent(mContext, MainActivity.class));
+                        Prefs.with(mContext).save("mobile", phone);
                     } else if (0 == data.code) {
                         ToastUtil.showToast(data.msg);
 
                     }
                 }
             }
+
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);

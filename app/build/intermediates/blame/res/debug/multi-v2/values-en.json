@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\android_hj\\8HaoCaiDian-master\\8HaoCaiDian\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "C:\\android\\dongjianbing\\8HaoCaiDian\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-1\\files-1.1\\Android-PickerView-3.2.7.aar\\fc469b177fbfbb368f0bf4f66ade7d43\\res\\values-en\\values-en.xml",
+                    "source": "C:\\Users\\EDZ\\.gradle\\caches\\transforms-1\\files-1.1\\Android-PickerView-3.2.7.aar\\460914bcc1024a8ff37ba7ae29504d56\\res\\values-en\\values-en.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.tuding.client.eightnumcolour.R;
 import com.tuding.client.eightnumcolour.activity.AccountDetailActivity;
+import com.tuding.client.eightnumcolour.activity.CashManagementActivity;
 import com.tuding.client.eightnumcolour.activity.LotteryResultsActivity;
 import com.tuding.client.eightnumcolour.activity.PsManagerActivity;
 import com.tuding.client.eightnumcolour.activity.RealNameActivity;
@@ -104,18 +105,23 @@ public class MineFragment extends RBBaseFragment implements AdapterView.OnItemCl
                 break;
 
             case 1:
-               startActivity(new Intent(getContext(),AccountDetailActivity.class));
+                startActivity(new Intent(getContext(), AccountDetailActivity.class));
                 break;
 
-            case 2 :
+            case 2:
 
                 startActivity(new Intent(getContext(), RealNameActivity.class));
 
                 break;
+            case 3:
 
-            case  4 :
+                startActivity(new Intent(getContext(), CashManagementActivity.class));
 
-                startActivity(new Intent(getContext(),PsManagerActivity.class));
+                break;
+
+            case 4:
+
+                startActivity(new Intent(getContext(), PsManagerActivity.class));
 
                 break;
         }
